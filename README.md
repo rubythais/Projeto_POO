@@ -71,6 +71,12 @@ O **Sistema de Eventos**, chamado **"Juntare"**, vem do italiano e significa "re
 
 ---
 
+## 📊 Diagrama do sistema (feito utilizando a ferramenta Mermaid.live ([Visualizar diagrama no Mermaid Live](https://mermaid.live)
+![WhatsApp Image 2025-02-26 at 8 27 18 PM](https://github.com/user-attachments/assets/5f84465b-4d6b-451b-a36e-a5c3487fd4b3)
+
+
+
+
 ## 📂 Estrutura do Projeto
 
 ```
