@@ -2,7 +2,7 @@
 
 ## Sobre o Projeto
 
-O **Sistema de Eventos** é um projeto desenvolvido para a disciplina de Programação Orientada a Objetos, usando a linguagem Java, proposto pelo professor Leonardo Lucena. O sistema permite o gerenciamento de eventos, incluindo cadastro de eventos, participantes e palestrantes, além da venda de ingressos.
+O **Sistema de Eventos** tem por nome ficticio **"Juntare**, que do italiano, significa “reunir”. O **Juntare** é um projeto desenvolvido para a disciplina de Programação Orientada a Objetos, usando a linguagem Java, proposto pelo professor Leonardo Lucena. O sistema permite o gerenciamento de eventos, incluindo cadastro de eventos, participantes e palestrantes, além da venda de ingressos.
 
 ## Funcionalidades
 
