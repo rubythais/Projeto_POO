@@ -73,4 +73,5 @@ SistemaDeEventos/
 
 ## Autor
 - Desenvolvido por Tâmara Thais Lourenço de Carvalho
- ([rubythais](https://github.com/rubythais)) como parte do curso de Análise e Desenvolvimento de Sistemas no IFRN - Campus Natal Central.
+ ([rubythais](https://github.com/rubythais)) como parte do curso de 
+Análise e Desenvolvimento de Sistemas no IFRN - Campus Natal Central.
