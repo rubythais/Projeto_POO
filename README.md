@@ -43,20 +43,6 @@ O **Sistema de Eventos** tem por nome ficticio **"Juntare"**, que do italiano, s
    ```bash
    java -cp bin Main
    ```
-## Executando a Interface Gráfica
-
-## Executando a Interface Gráfica do Sistema de Eventos
-
-### **Pré-requisitos**
-Antes de rodar a interface gráfica, certifique-se de que possui:
-
-- **Java 17 ou superior** instalado.
-- **Um ambiente de desenvolvimento Java** (IntelliJ IDEA, Eclipse, VS Code ou NetBeans).
-- O repositório do projeto clonado localmente:
-  ```bash
-  git clone https://github.com/rubythais/SistemaDeEventos.git
-  cd SistemaDeEventos
-  ```
 
 ---
 
