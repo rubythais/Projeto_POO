@@ -45,24 +45,47 @@ O **Sistema de Eventos** tem por nome ficticio **"Juntare"**, que do italiano, s
    ```
 ## Executando a Interface Gráfica
 
-Para executar a interface gráfica do Sistema de Gerenciamento de Eventos, siga estes passos:
+## Executando a Interface Gráfica do Sistema de Eventos
 
-1. Certifique-se de que você tem o Java Development Kit (JDK) instalado em sua máquina.
+### **Pré-requisitos**
+Antes de rodar a interface gráfica, certifique-se de que possui:
 
-2. Abra um terminal ou prompt de comando.
+- **Java 17 ou superior** instalado.
+- **Um ambiente de desenvolvimento Java** (IntelliJ IDEA, Eclipse, VS Code ou NetBeans).
+- O repositório do projeto clonado localmente:
+  ```bash
+  git clone https://github.com/rubythais/SistemaDeEventos.git
+  cd SistemaDeEventos
+  ```
 
-3. Navegue até o diretório raiz do projeto:
+---
 
-4. Compile o projeto:
-cd caminho/para/SistemaDeEventos
+###  **Passos para rodar a interface gráfica**
 
-5. Execute a interface gráfica:
-javac -d bin src/*.java src/*/*.java
+1. **Abra o projeto no seu ambiente de desenvolvimento**.
+   - No IntelliJ: Vá em *File* > *Open* e selecione a pasta do projeto.
+   - No Eclipse: Vá em *File* > *Open Projects from File System* e escolha a pasta do projeto.
 
-6. A interface gráfica do Sistema de Gerenciamento de Eventos deve aparecer, permitindo que você interaja com o sistema.
-   java -cp bin MainGUI
+2. **Compile e execute o arquivo `MainGUI.java`**.
+   - Se estiver no terminal, use o seguinte comando:
+     ```bash
+     javac src/view/MainGUI.java
+     java -cp src view.MainGUI
+     ```
 
-Nota: Certifique-se de que seu ambiente suporta interfaces gráficas Java (Swing). Em alguns ambientes de desenvolvimento baseados em nuvem, pode não ser possível executar interfaces gráficas.
+3. **A interface será aberta e você poderá adicionar participantes e eventos**.
+
+---
+
+### ---> **Possíveis Erros e Soluções**
+
+- **Erro: "Could not find or load main class view.MainGUI"**  
+  🔹 Certifique-se de que está rodando o comando dentro da pasta correta e que a estrutura do projeto está organizada como `src/view/MainGUI.java`.
+  
+- **Erro de bibliotecas ausentes**  
+  🔹 Se houver bibliotecas externas, configure o classpath corretamente no seu ambiente de desenvolvimento.
+
+
 
 ### Via IDE
 
