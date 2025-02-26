@@ -16,7 +16,8 @@ public class Main {
 
   public static void main(String[] args) {
       while (true) {
-          System.out.println("\n=== Sistema de Gerenciamento de Eventos ===");
+          System.out.println("\n=== Bem vindo ao seu sistema de eventos Organzia + ===");
+          System.out.println("\n=== O que você deseja fazer?");
           System.out.println("1. Criar novo evento");
           System.out.println("2. Cadastrar participante");
           System.out.println("3. Cadastrar palestrante");
