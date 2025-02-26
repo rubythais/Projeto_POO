@@ -1,33 +1,20 @@
 package model;
 
-import interfaces.Validavel;
+import java.io.Serializable;
 
-public class Ingresso implements Validavel {
-    private String id;
-    private double preco;
-    private Evento evento;
-    private Participante participante;
-    private LoteIngresso lote;
-    private boolean valido;
+public class Ingresso implements Serializable {
+    private String codigo;
+    private double valor;
 
-    public Ingresso(double preco, Evento evento, Participante participante, LoteIngresso lote) {
-        this.id = java.util.UUID.randomUUID().toString();
-        this.preco = preco;
-        this.evento = evento;
-        this.participante = participante;
-        this.lote = lote;
-        this.valido = true;
+    public Ingresso(String codigo, double valor) {
+        this.codigo = codigo;
+        this.valor = valor;
     }
 
     @Override
-    public boolean validar() {
-        return valido && evento != null && participante != null;
+    public String toString() {
+        return "Ingresso: Código " + codigo + ", Valor: R$" + valor;
     }
 
-    public String getId() { return id; }
-    public double getPreco() { return preco; }
-    public Evento getEvento() { return evento; }
-    public Participante getParticipante() { return participante; }
-    public boolean isValido() { return valido; }
-    public void setValido(boolean valido) { this.valido = valido; }
+    // Getters e setters
 }
