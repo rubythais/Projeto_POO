@@ -1,6 +1,8 @@
 package model;
 
-public class Participante {
+import java.io.Serializable;
+
+public class Participante implements Serializable {
     private String nome;
     private String email;
     private String cpf;
@@ -24,5 +26,10 @@ public class Participante {
         return cpf.hashCode();
     }
 
-    // Getters e setters...
+    @Override
+    public String toString() {
+        return "Participante: " + nome + ", Email: " + email + ", CPF: " + cpf;
+    }
+
+    // Getters e setters
 }
