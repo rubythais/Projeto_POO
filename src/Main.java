@@ -16,8 +16,9 @@ public class Main {
 
   public static void main(String[] args) {
       while (true) {
-          System.out.println("\n=== Bem vindo ao seu sistema de eventos Organzia + ===");
-          System.out.println("\n=== O que você deseja fazer?");
+          System.out.println("\n ✨Seja bem vindo(a) ao Juntare! Seu assistente completo para organizar eventos com facilidade.✨ ");
+
+          System.out.println("\n O que você deseja fazer?");
           System.out.println("1. Criar novo evento");
           System.out.println("2. Cadastrar participante");
           System.out.println("3. Cadastrar palestrante");
@@ -54,76 +55,76 @@ public class Main {
                   menuRelatorios();
                   break;
               case 8:
-                  System.out.println("Encerrando o sistema...");
+                  System.out.println("Encerrando o sistema em 3, 2, 1...");
                   return;
               default:
-                  System.out.println("Opção inválida!");
+                  System.out.println("Opa! Opção inválida😵");
           }
       }
   }
 
   private static void criarEvento() {
-      System.out.println("\n=== Criar Novo Evento ===");
+      System.out.println("\n Criar Novo Evento ⏳");
       System.out.print("Nome do evento: ");
       String nome = scanner.nextLine();
 
-      System.out.print("Local: ");
+      System.out.print("Local📍: ");
       String local = scanner.nextLine();
 
       System.out.print("Capacidade máxima: ");
       int capacidade = scanner.nextInt();
       scanner.nextLine(); // Consome a quebra de linha
 
-      System.out.print("Data (dd/MM/yyyy HH:mm): ");
+      System.out.print("Data (dd/MM/yyyy HH:mm)📆🕑: ");
       String dataStr = scanner.nextLine();
       LocalDateTime data = LocalDateTime.parse(dataStr, 
           DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
 
       Evento evento = new Evento(nome, data, local, capacidade);
       eventos.add(evento);
-      System.out.println("Evento criado com sucesso! ID: " + evento.getId());
+      System.out.println("Evento criado com sucesso!✅ ID: " + evento.getId());
   }
 
   private static void cadastrarParticipante() {
-      System.out.println("\n=== Cadastrar Participante ===");
+      System.out.println("\n Cadastrar Participante ");
       System.out.print("Nome: ");
       String nome = scanner.nextLine();
 
       System.out.print("Email: ");
       String email = scanner.nextLine();
       while (!Validador.validarEmail(email)) {
-          System.out.println("Email inválido! Tente novamente: ");
+          System.out.println("Email inválido!😵 Tente novamente: ");
           email = scanner.nextLine();
       }
 
       System.out.print("CPF: ");
       String cpf = scanner.nextLine();
       while (!Validador.validarCPF(cpf)) {
-          System.out.println("CPF inválido! Tente novamente: ");
+          System.out.println("CPF inválido!😵 Tente novamente: ");
           cpf = scanner.nextLine();
       }
 
       Participante participante = new Participante(nome, email, cpf);
       participantes.add(participante);
-      System.out.println("Participante cadastrado com sucesso! ID: " + participante.getId());
+      System.out.println("Participante cadastrado com sucesso!✅ ID: " + participante.getId());
   }
 
   private static void cadastrarPalestrante() {
-      System.out.println("\n=== Cadastrar Palestrante ===");
+      System.out.println("\n Cadastrar Palestrante ");
       System.out.print("Nome: ");
       String nome = scanner.nextLine();
 
       System.out.print("Email: ");
       String email = scanner.nextLine();
       while (!Validador.validarEmail(email)) {
-          System.out.println("Email inválido! Tente novamente: ");
+          System.out.println("Email inválido!😵 Tente novamente: ");
           email = scanner.nextLine();
       }
 
       System.out.print("CPF: ");
       String cpf = scanner.nextLine();
       while (!Validador.validarCPF(cpf)) {
-          System.out.println("CPF inválido! Tente novamente: ");
+          System.out.println("CPF inválido!😵 Tente novamente: ");
           cpf = scanner.nextLine();
       }
 
@@ -132,7 +133,7 @@ public class Main {
 
       Palestrante palestrante = new Palestrante(nome, email, cpf, especialidade);
       palestrantes.add(palestrante);
-      System.out.println("Palestrante cadastrado com sucesso! ID: " + palestrante.getId());
+      System.out.println("Palestrante cadastrado com sucesso!✅ ID: " + palestrante.getId());
   }
 
   private static void criarLoteIngressos() {
@@ -141,7 +142,7 @@ public class Main {
           return;
       }
 
-      System.out.println("\n=== Criar Lote de Ingressos ===");
+      System.out.println("\nCriar Lote de Ingressos ");
       System.out.println("Eventos disponíveis:");
       for (int i = 0; i < eventos.size(); i++) {
           System.out.println(i + ". " + eventos.get(i).getNome());
@@ -161,9 +162,9 @@ public class Main {
           double preco = scanner.nextDouble();
 
           evento.criarLote(quantidade, preco);
-          System.out.println("Lote de ingressos criado com sucesso!");
+          System.out.println("Lote de ingressos criado com sucesso!✅");
       } else {
-          System.out.println("Evento inválido!");
+          System.out.println("Evento inválido!😵");
       }
   }
 
@@ -173,7 +174,7 @@ public class Main {
           return;
       }
 
-      System.out.println("\n=== Vender Ingresso ===");
+      System.out.println("\nVender Ingresso ");
       System.out.println("Eventos disponíveis:");
       for (int i = 0; i < eventos.size(); i++) {
           System.out.println(i + ". " + eventos.get(i).getNome());
@@ -187,7 +188,7 @@ public class Main {
           List<LoteIngresso> lotes = evento.getLotes();
 
           if (lotes.isEmpty()) {
-              System.out.println("Não há lotes de ingressos disponíveis para este evento!");
+              System.out.println("Não há lotes de ingressos disponíveis para este evento!😵");
               return;
           }
 
@@ -216,28 +217,28 @@ public class Main {
 
                   Ingresso ingresso = evento.venderIngresso(participante, lote);
                   if (ingresso != null) {
-                      System.out.println("Ingresso vendido com sucesso! ID: " + ingresso.getId());
+                      System.out.println("Ingresso vendido com sucesso!✅ ID: " + ingresso.getId());
                   } else {
-                      System.out.println("Não foi possível vender o ingresso!");
+                      System.out.println("Não foi possível vender o ingresso!😵");
                   }
               } else {
-                  System.out.println("Participante inválido!");
+                  System.out.println("Participante inválido!😵");
               }
           } else {
-              System.out.println("Lote inválido!");
+              System.out.println("Lote inválido!😵");
           }
       } else {
-          System.out.println("Evento inválido!");
+          System.out.println("Evento inválido!😵");
       }
   }
 
   private static void gerarCertificado() {
       if (eventos.isEmpty() || participantes.isEmpty()) {
-          System.out.println("É necessário ter eventos e participantes cadastrados!");
+          System.out.println("É necessário ter eventos e participantes cadastrados!😵");
           return;
       }
 
-      System.out.println("\n=== Gerar Certificado ===");
+      System.out.println("\n Gerar Certificado ");
       System.out.println("Eventos disponíveis:");
       for (int i = 0; i < eventos.size(); i++) {
           System.out.println(i + ". " + eventos.get(i).getNome());
@@ -251,7 +252,7 @@ public class Main {
           List<Participante> participantesEvento = evento.getParticipantes();
 
           if (participantesEvento.isEmpty()) {
-              System.out.println("Não há participantes neste evento!");
+              System.out.println("Não há participantes neste evento!😵");
               return;
           }
 
@@ -270,19 +271,19 @@ public class Main {
                   certificado.emitir();
                   participante.adicionarCertificado(certificado);
               } else {
-                  System.out.println("Não foi possível gerar o certificado!");
+                  System.out.println("Não foi possível gerar o certificado!😵");
               }
           } else {
-              System.out.println("Participante inválido!");
+              System.out.println("Participante inválido!😵");
           }
       } else {
-          System.out.println("Evento inválido!");
+          System.out.println("Evento inválido!😵");
       }
   }
 
   private static void menuRelatorios() {
       if (eventos.isEmpty()) {
-          System.out.println("Não há eventos cadastrados!");
+          System.out.println("Não há eventos cadastrados!😵");
           return;
       }
 
@@ -317,10 +318,10 @@ public class Main {
                   Relatorio.gerarRelatorioPalestrantes(evento);
                   break;
               default:
-                  System.out.println("Opção inválida!");
+                  System.out.println("Opção inválida!😵");
           }
       } else {
-          System.out.println("Evento inválido!");
+          System.out.println("Evento inválido!😵");
       }
   }
 }
