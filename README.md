@@ -61,15 +61,16 @@ O **Sistema de Eventos** tem por nome ficticio **"Juntare"**, que do italiano, s
    - No macOS: Abra o Terminal
    - No Linux: Abra o Terminal
 
-2. **Navegue até o Diretório do Projeto**
-Substitua `caminho/para/SistemaDeEventos` pelo caminho real do seu projeto.
-
-3. **Compile o Projeto**
-```
-   cd caminho/para/SistemaDeEventos
-  ```
-
-4.Este comando executa a classe MainGUI, que inicia a interface gráfica do sistema.
+1. Clone o repositório:
+   ```
+   git clone https://github.com/rubythais/SistemaDeEventos.git
+   ```
+2. Acesse a pasta do projeto:
+   ```
+   cd SistemaDeEventos
+   ```
+   
+3.Este comando executa a classe MainGUI, que inicia a interface gráfica do sistema.
 ```
    java -cp bin MainGUI
   ```
