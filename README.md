@@ -1,31 +1,33 @@
-# Sistema de Eventos
+# 🎟️ Sistema de Eventos - Juntare
 
-## Sobre o Projeto
+## 📌 Sobre o Projeto
 
-O **Sistema de Eventos** tem por nome ficticio **"Juntare"**, que do italiano, significa “reunir”. O **Juntare** é um projeto desenvolvido para a disciplina de Programação Orientada a Objetos, usando a linguagem Java, proposto pelo professor Leonardo Lucena. O sistema permite o gerenciamento de eventos, incluindo cadastro de eventos, participantes e palestrantes, além da venda de ingressos.
+O **Sistema de Eventos**, chamado **"Juntare"**, vem do italiano e significa "reunir". Este projeto foi desenvolvido para a disciplina de **Programação Orientada a Objetos (POO)**, utilizando **Java**, sob orientação do professor **Leonardo Lucena**. O sistema permite a gestão de eventos, com funcionalidades como cadastro de eventos, participantes e palestrantes, além da venda de ingressos.
 
-## Funcionalidades
+## 🚀 Funcionalidades
 
-- Cadastro, edição, exclusão e consulta de eventos
-- Cadastro de participantes e palestrantes
-- Venda de ingressos para eventos
-- Geração de relatórios com listagens de eventos e participantes
+✅ Cadastro, edição, exclusão e consulta de eventos.
+✅ Registro de participantes e palestrantes.
+✅ Venda de ingressos com controle de lotes.
+✅ Emissão de certificados.
+✅ Geração de relatórios sobre eventos e participantes.
 
-## Tecnologias Utilizadas
+## 🛠️ Tecnologias Utilizadas
 
 - **Java** (JDK 17+)
 - **Collections Framework** (ArrayList, HashMap)
 - **Tratamento de Exceções**
-- **Persistência de dados** (arquivos .txt)
+- **Persistência de Dados** (Arquivos `.txt`)
+- **Swing** para Interface Gráfica
 
-## Requisitos
+## 📌 Requisitos para Execução
 
-- Java Development Kit (JDK) instalado (versão 17 ou superior)
-- IDE de sua preferência (IntelliJ, Eclipse, VS Code) ou terminal com Java configurado
+- **Java Development Kit (JDK 17 ou superior)**
+- **IDE compatível** (IntelliJ, Eclipse, VS Code) ou execução via **terminal**
 
-## Como Executar o Projeto
+## 🏃‍♂️ Como Executar o Projeto
 
-### Via Terminal
+### 📌 Via Terminal
 
 1. Clone o repositório:
    ```bash
@@ -46,47 +48,34 @@ O **Sistema de Eventos** tem por nome ficticio **"Juntare"**, que do italiano, s
 
 ---
 
-# Executar Interface Gráfica (MainGUI)
+## 🎨 Executando a Interface Gráfica (MainGUI)
 
+### 📌 Pré-requisitos
 
-## Pré-requisitos
+- **JDK 17+ instalado**
+- **Código-fonte do projeto clonado**
 
-- Java Development Kit (JDK) instalado em seu sistema
-- Código-fonte do projeto baixado em seu computador
+### 📌 Passos
 
-## Passos para Execução
-
-1. **Abra o Prompt de Comando**
-   - No Windows: Pressione `Win + R`, digite `cmd` e pressione Enter
-   - No macOS: Abra o Terminal
-   - No Linux: Abra o Terminal
-
-1. Clone o repositório:
-   ```
-   git clone https://github.com/rubythais/SistemaDeEventos.git
-   ```
+1. Abra o terminal ou prompt de comando.
 2. Acesse a pasta do projeto:
-   ```
+   ```bash
    cd SistemaDeEventos
    ```
-   
-3.Este comando executa a classe MainGUI, que inicia a interface gráfica do sistema.
-```
+3. Compile e execute a interface gráfica:
+   ```bash
    java -cp bin MainGUI
-  ```
-## Solução de Problemas
+   ```
 
-- Se você encontrar um erro de "Classe não encontrada", verifique se o caminho do classpath está correto e se a classe MainGUI está no pacote correto.
-- Certifique-se de que todas as dependências necessárias estão no classpath.
-- Se a interface gráfica não aparecer, verifique se seu sistema suporta interfaces gráficas Java (Swing).
+### ⚠️ Possíveis Problemas
 
-### Via IDE
+- **Erro de classe não encontrada?** Verifique se o caminho do classpath está correto.
+- **Interface não aparece?** Confirme se o sistema suporta Java Swing.
+- **Arquivos de dados não carregam?** Confira se os arquivos `.txt` estão corretamente salvos na pasta do projeto.
 
-1. Importe o projeto na sua IDE.
-2. Compile os arquivos-fonte.
-3. Execute `Main.java` para rodar o sistema.
+---
 
-## Estrutura do Projeto
+## 📂 Estrutura do Projeto
 
 ```
 SistemaDeEventos/
@@ -102,12 +91,14 @@ SistemaDeEventos/
 │── compile-run.sh    # Script para compilar e rodar
 ```
 
-## Observações
+---
 
-- O sistema salva os dados em arquivos `.txt` dentro do diretório do projeto.
-- Caso encontre problemas ao rodar, verifique a versão do Java instalada.
+## 🎓 Autor
 
-## Autor
+Desenvolvido por **Tâmara Thais Lourenço de Carvalho** ([rubythais](https://github.com/rubythais)) como parte do curso de **Análise e Desenvolvimento de Sistemas** no **IFRN - Campus Natal Central**.
 
-- Desenvolvido por Tâmara Thais Lourenço de Carvalho
- ([rubythais](https://github.com/rubythais)) como parte do curso de Análise e Desenvolvimento de Sistemas no IFRN - Campus Natal Central.
+📌 **Observação:** O sistema salva os dados em **arquivos `.txt`**, garantindo persistência entre execuções. Caso encontre problemas, verifique sua **versão do Java**!
+
+🔗 **Dúvidas ou sugestões?** Contribua com o projeto no GitHub! 😃
+
+
