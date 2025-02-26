@@ -43,6 +43,26 @@ O **Sistema de Eventos** tem por nome ficticio **"Juntare"**, que do italiano, s
    ```bash
    java -cp bin Main
    ```
+## Executando a Interface Gráfica
+
+Para executar a interface gráfica do Sistema de Gerenciamento de Eventos, siga estes passos:
+
+1. Certifique-se de que você tem o Java Development Kit (JDK) instalado em sua máquina.
+
+2. Abra um terminal ou prompt de comando.
+
+3. Navegue até o diretório raiz do projeto:
+
+4. Compile o projeto:
+cd caminho/para/SistemaDeEventos
+
+5. Execute a interface gráfica:
+javac -d bin src/*.java src/*/*.java
+
+6. A interface gráfica do Sistema de Gerenciamento de Eventos deve aparecer, permitindo que você interaja com o sistema.
+   java -cp bin MainGUI
+
+Nota: Certifique-se de que seu ambiente suporta interfaces gráficas Java (Swing). Em alguns ambientes de desenvolvimento baseados em nuvem, pode não ser possível executar interfaces gráficas.
 
 ### Via IDE
 
