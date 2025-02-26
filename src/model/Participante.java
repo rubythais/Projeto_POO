@@ -1,39 +1,28 @@
 package model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-public class Participante extends Usuario {
-    private List<Evento> eventosInscritos;
-    private List<Certificado> certificados;
+public class Participante {
+    private String nome;
+    private String email;
+    private String cpf;
 
     public Participante(String nome, String email, String cpf) {
-        super(nome, email, cpf);
-        this.eventosInscritos = new ArrayList<>();
-        this.certificados = new ArrayList<>();
+        this.nome = nome;
+        this.email = email;
+        this.cpf = cpf;
     }
 
-    public void inscreverEmEvento(Evento evento) {
-        if (!eventosInscritos.contains(evento)) {
-            eventosInscritos.add(evento);
-            evento.adicionarParticipante(this);
-        }
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Participante that = (Participante) obj;
+        return cpf.equals(that.cpf);
     }
 
-    public void cancelarInscricao(Evento evento) {
-        eventosInscritos.remove(evento);
-        evento.removerParticipante(this);
+    @Override
+    public int hashCode() {
+        return cpf.hashCode();
     }
 
-    public void adicionarCertificado(Certificado certificado) {
-        certificados.add(certificado);
-    }
-
-    public List<Evento> getEventosInscritos() {
-        return new ArrayList<>(eventosInscritos);
-    }
-
-    public List<Certificado> getCertificados() {
-        return new ArrayList<>(certificados);
-    }
+    // Getters e setters...
 }
