@@ -1,9 +1,10 @@
 package model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Evento {
+public class Evento implements Serializable {
     private String nome;
     private String data;
     private String local;
@@ -17,14 +18,17 @@ public class Evento {
     }
 
     public boolean adicionarParticipante(Participante participante) {
-        for (Participante p : participantes) {
-            if (p.equals(participante)) {
-                return false; // Participante já existente e não ppode repitir
-            }
+        if (!participantes.contains(participante)) {
+            participantes.add(participante);
+            return true;
         }
-        participantes.add(participante);
-        return true;
+        return false;
     }
 
-    // Outros métodos...
+    @Override
+    public String toString() {
+        return "Evento: " + nome + ", Data: " + data + ", Local: " + local;
+    }
+
+    // Getters e setters
 }
