@@ -1,10 +1,10 @@
 # 🎟️ Sistema de Eventos - Juntare
 
-## 📌 Sobre o Projeto
+##  Sobre o Projeto
 
 O **Sistema de Eventos**, chamado **"Juntare"**, vem do italiano e significa "reunir". Este projeto foi desenvolvido para a disciplina de **Programação Orientada a Objetos (POO)**, utilizando **Java**, sob orientação do professor **Leonardo Lucena**. O sistema permite a gestão de eventos, com funcionalidades como cadastro de eventos, participantes e palestrantes, além da venda de ingressos.
 
-## 🚀 Funcionalidades
+##  Funcionalidades
 
 ✅ Cadastro, edição, exclusão e consulta de eventos.
 ✅ Registro de participantes e palestrantes.
@@ -20,14 +20,14 @@ O **Sistema de Eventos**, chamado **"Juntare"**, vem do italiano e significa "re
 - **Persistência de Dados** (Arquivos `.txt`)
 - **Swing** para Interface Gráfica
 
-## 📌 Requisitos para Execução
+##  Requisitos para Execução
 
 - **Java Development Kit (JDK 17 ou superior)**
 - **IDE compatível** (IntelliJ, Eclipse, VS Code) ou execução via **terminal**
 
-## 🏃‍♂️ Como Executar o Projeto
+## Como Executar o Projeto
 
-### 📌 Via Terminal
+###  Via Terminal
 
 1. Clone o repositório:
    ```bash
@@ -37,25 +37,21 @@ O **Sistema de Eventos**, chamado **"Juntare"**, vem do italiano e significa "re
    ```bash
    cd SistemaDeEventos
    ```
-3. Compile o código:
-   ```bash
-   javac -d bin src/**/*.java
-   ```
-4. Execute o sistema:
+3. Execute o sistema:
    ```bash
    java -cp bin Main
    ```
 
 ---
 
-## 🎨 Executando a Interface Gráfica (MainGUI)
+##  Executando a Interface Gráfica (MainGUI)
 
-### 📌 Pré-requisitos
+### Pré-requisitos
 
 - **JDK 17+ instalado**
 - **Código-fonte do projeto clonado**
 
-### 📌 Passos
+###  Passos
 
 1. Abra o terminal ou prompt de comando.
 2. Acesse a pasta do projeto:
