@@ -72,5 +72,5 @@ SistemaDeEventos/
 - Caso encontre problemas ao rodar, verifique a versão do Java instalada.
 
 ## Autor
-- Tâmara Thais Lourenço de Carvalho
-Desenvolvido por [rubythais](https://github.com/rubythais) como parte do curso de Análise e Desenvolvimento de Sistemas no IFRN - Campus Natal Central.
+- Desenvolvido por Tâmara Thais Lourenço de Carvalho
+ ([rubythais](https://github.com/rubythais)) como parte do curso de Análise e Desenvolvimento de Sistemas no IFRN - Campus Natal Central.
