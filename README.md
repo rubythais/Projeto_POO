@@ -60,32 +60,42 @@ Antes de rodar a interface gráfica, certifique-se de que possui:
 
 ---
 
-###  **Passos para rodar a interface gráfica**
-
-1. **Abra o projeto no seu ambiente de desenvolvimento**.
-   - No IntelliJ: Vá em *File* > *Open* e selecione a pasta do projeto.
-   - No Eclipse: Vá em *File* > *Open Projects from File System* e escolha a pasta do projeto.
-
-2. **Compile e execute o arquivo `MainGUI.java`**.
-   - Se estiver no terminal, use o seguinte comando:
-     ```bash
-     javac src/view/MainGUI.java
-     java -cp src view.MainGUI
-     ```
-
-3. **A interface será aberta e você poderá adicionar participantes e eventos**.
-
----
-
-### ---> **Possíveis Erros e Soluções**
-
-- **Erro: "Could not find or load main class view.MainGUI"**  
-  🔹 Certifique-se de que está rodando o comando dentro da pasta correta e que a estrutura do projeto está organizada como `src/view/MainGUI.java`.
-  
-- **Erro de bibliotecas ausentes**  
-  🔹 Se houver bibliotecas externas, configure o classpath corretamente no seu ambiente de desenvolvimento.
+# Executar Interface Gráfica (MainGUI)
 
 
+## Pré-requisitos
+
+- Java Development Kit (JDK) instalado em seu sistema
+- Código-fonte do projeto baixado em seu computador
+
+## Passos para Execução
+
+1. **Abra o Prompt de Comando**
+   - No Windows: Pressione `Win + R`, digite `cmd` e pressione Enter
+   - No macOS: Abra o Terminal
+   - No Linux: Abra o Terminal
+
+2. **Navegue até o Diretório do Projeto**
+Substitua `caminho/para/SistemaDeEventos` pelo caminho real do seu projeto.
+
+3. **Compile o Projeto**
+```
+   cd caminho/para/SistemaDeEventos
+  ```
+Este comando compila todos os arquivos Java no diretório `src` e seus subdiretórios, colocando os arquivos `.class` resultantes no diretório `bin`.
+4. **Execute a Interface Gráfica**
+```
+   javac -d bin src/*.java src/*/*.java
+  ```
+Este comando executa a classe MainGUI, que inicia a interface gráfica do sistema.
+```
+   java -cp bin MainGUI
+  ```
+## Solução de Problemas
+
+- Se você encontrar um erro de "Classe não encontrada", verifique se o caminho do classpath está correto e se a classe MainGUI está no pacote correto.
+- Certifique-se de que todas as dependências necessárias estão no classpath.
+- Se a interface gráfica não aparecer, verifique se seu sistema suporta interfaces gráficas Java (Swing).
 
 ### Via IDE
 
