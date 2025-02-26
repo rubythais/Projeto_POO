@@ -68,12 +68,8 @@ Substitua `caminho/para/SistemaDeEventos` pelo caminho real do seu projeto.
 ```
    cd caminho/para/SistemaDeEventos
   ```
-Este comando compila todos os arquivos Java no diretório `src` e seus subdiretórios, colocando os arquivos `.class` resultantes no diretório `bin`.
-4. **Execute a Interface Gráfica**
-```
-   javac -d bin src/*.java src/*/*.java
-  ```
-Este comando executa a classe MainGUI, que inicia a interface gráfica do sistema.
+
+4.Este comando executa a classe MainGUI, que inicia a interface gráfica do sistema.
 ```
    java -cp bin MainGUI
   ```
