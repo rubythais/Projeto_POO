@@ -1,48 +1,34 @@
 package service;
 
 import model.*;
+import repository.ArquivoRepository;
 import java.util.List;
 
 public class Relatorio {
-  public static void gerarRelatorioParticipantes(Evento evento) {
-      System.out.println("=== Relatório de Participantes ===");
-      System.out.println("Evento: " + evento.getNome());
-      System.out.println("Data: " + evento.getData());
-      System.out.println("Local: " + evento.getLocal());
-      System.out.println("Participantes:");
-      
-      List<Participante> participantes = evento.getParticipantes();
-      for (Participante p : participantes) {
-          System.out.println("- " + p.getNome() + " (" + p.getEmail() + ")");
-      }
-      
-      System.out.println("Total de participantes: " + participantes.size());
-  }
+    private ArquivoRepository repository;
 
-  public static void gerarRelatorioIngressosVendidos(Evento evento) {
-      System.out.println("=== Relatório de Ingressos Vendidos ===");
-      System.out.println("Evento: " + evento.getNome());
-      
-      List<LoteIngresso> lotes = evento.getLotes();
-      for (LoteIngresso lote : lotes) {
-          System.out.println("Lote " + lote.getId());
-          System.out.println("Preço: R$ " + String.format("%.2f", lote.getPreco()));
-          System.out.println("Ingressos disponíveis: " + lote.getQuantidade());
-      }
-  }
+    public Relatorio() {
+        this.repository = new ArquivoRepository();
+    }
 
-  public static void gerarRelatorioPalestrantes(Evento evento) {
-      System.out.println("=== Relatório de Palestrantes ===");
-      System.out.println("Evento: " + evento.getNome());
-      System.out.println("Palestrantes:");
-      
-      List<Palestrante> palestrantes = evento.getPalestrantes();
-      for (Palestrante p : palestrantes) {
-          System.out.println("- " + p.getNome());
-          System.out.println("  Especialidade: " + p.getEspecialidade());
-          System.out.println("  Contato: " + p.getEmail());
-      }
-      
-      System.out.println("Total de palestrantes: " + palestrantes.size());
-  }
+    public String gerarRelatorioParticipantes() {
+        List<Participante> participantes = repository.carregarTodos(Participante.class);
+        StringBuilder sb = new StringBuilder("Relatório de Participantes:\n");
+        for (Participante p : participantes) {
+            sb.append(p.toString()).append("\n");
+        }
+        return sb.toString();
+    }
+
+    public String gerarRelatorioVendas() {
+        List<Ingresso> ingressos = repository.carregarTodos(Ingresso.class);
+        double totalVendas = 0;
+        StringBuilder sb = new StringBuilder("Relatório de Vendas:\n");
+        for (Ingresso i : ingressos) {
+            sb.append(i.toString()).append("\n");
+            totalVendas += i.getValor();
+        }
+        sb.append("Total de vendas: R$").append(totalVendas);
+        return sb.toString();
+    }
 }
