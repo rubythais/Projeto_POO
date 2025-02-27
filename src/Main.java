@@ -9,13 +9,16 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
+  // Scanner para entrada de dados do usuário
   private static Scanner scanner = new Scanner(System.in);
+  // Listas para armazenar eventos, participantes e palestrantes
   private static List<Evento> eventos = new ArrayList<>();
   private static List<Participante> participantes = new ArrayList<>();
   private static List<Palestrante> palestrantes = new ArrayList<>();
 
   public static void main(String[] args) {
       while (true) {
+          // Exibe o menu principal do sistema
           System.out.println("\n ✨Seja bem vindo(a) ao Juntare! Seu assistente completo para organizar eventos com facilidade.✨ ");
 
           System.out.println("\n O que você deseja fazer?");
@@ -32,33 +35,34 @@ public class Main {
           int opcao = scanner.nextInt();
           scanner.nextLine(); // Consome a quebra de linha
 
+          // Switch para tratar a opção escolhida pelo usuário
           switch (opcao) {
               case 1:
-                  criarEvento();
+                  criarEvento(); // Chama o método para criar evento
                   break;
               case 2:
-                  cadastrarParticipante();
+                  cadastrarParticipante(); // Chama o método para cadastrar participante
                   break;
               case 3:
-                  cadastrarPalestrante();
+                  cadastrarPalestrante(); // Chama o método para cadastrar palestrante
                   break;
               case 4:
-                  criarLoteIngressos();
+                  criarLoteIngressos(); // Chama o método para criar lote de ingressos
                   break;
               case 5:
-                  venderIngresso();
+                  venderIngresso(); // Chama o método para vender ingresso
                   break;
               case 6:
-                  gerarCertificado();
+                  gerarCertificado(); // Chama o método para gerar certificado
                   break;
               case 7:
-                  menuRelatorios();
+                  menuRelatorios(); // Chama o método para gerar relatórios
                   break;
               case 8:
-                  System.out.println("Encerrando o sistema em 3, 2, 1...");
+                  System.out.println("Encerrando o sistema em 3, 2, 1..."); // Mensagem de encerramento
                   return;
               default:
-                  System.out.println("Opa! Opção inválida😵");
+                  System.out.println("Opa! Opção inválida😵"); // Mensagem de erro para opção inválida
           }
       }
   }
@@ -80,8 +84,8 @@ public class Main {
       LocalDateTime data = LocalDateTime.parse(dataStr, 
           DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
 
-      Evento evento = new Evento(nome, data, local, capacidade);
-      eventos.add(evento);
+      Evento evento = new Evento(nome, data, local, capacidade); // Criação do evento
+      eventos.add(evento); // Adiciona o evento à lista de eventos
       System.out.println("Evento criado com sucesso!✅ ID: " + evento.getId());
   }
 
@@ -92,20 +96,20 @@ public class Main {
 
       System.out.print("Email: ");
       String email = scanner.nextLine();
-      while (!Validador.validarEmail(email)) {
+      while (!Validador.validarEmail(email)) { // Validação do email
           System.out.println("Email inválido!😵 Tente novamente: ");
           email = scanner.nextLine();
       }
 
       System.out.print("CPF: ");
       String cpf = scanner.nextLine();
-      while (!Validador.validarCPF(cpf)) {
+      while (!Validador.validarCPF(cpf)) { // Validação do CPF
           System.out.println("CPF inválido!😵 Tente novamente: ");
           cpf = scanner.nextLine();
       }
 
-      Participante participante = new Participante(nome, email, cpf);
-      participantes.add(participante);
+      Participante participante = new Participante(nome, email, cpf); // Criação do participante
+      participantes.add(participante); // Adiciona o participante à lista
       System.out.println("Participante cadastrado com sucesso!✅ ID: " + participante.getId());
   }
 
@@ -116,14 +120,14 @@ public class Main {
 
       System.out.print("Email: ");
       String email = scanner.nextLine();
-      while (!Validador.validarEmail(email)) {
+      while (!Validador.validarEmail(email)) { // Validação do email
           System.out.println("Email inválido!😵 Tente novamente: ");
           email = scanner.nextLine();
       }
 
       System.out.print("CPF: ");
       String cpf = scanner.nextLine();
-      while (!Validador.validarCPF(cpf)) {
+      while (!Validador.validarCPF(cpf)) { // Validação do CPF
           System.out.println("CPF inválido!😵 Tente novamente: ");
           cpf = scanner.nextLine();
       }
@@ -131,201 +135,8 @@ public class Main {
       System.out.print("Especialidade: ");
       String especialidade = scanner.nextLine();
 
-      Palestrante palestrante = new Palestrante(nome, email, cpf, especialidade);
-      palestrantes.add(palestrante);
+      Palestrante palestrante = new Palestrante(nome, email, cpf, especialidade); // Criação do palestrante
+      palestrantes.add(palestrante); // Adiciona o palestrante à lista
       System.out.println("Palestrante cadastrado com sucesso!✅ ID: " + palestrante.getId());
   }
-
-  private static void criarLoteIngressos() {
-      if (eventos.isEmpty()) {
-          System.out.println("Não há eventos cadastrados!");
-          return;
-      }
-
-      System.out.println("\nCriar Lote de Ingressos ");
-      System.out.println("Eventos disponíveis:");
-      for (int i = 0; i < eventos.size(); i++) {
-          System.out.println(i + ". " + eventos.get(i).getNome());
-      }
-
-      System.out.print("Selecione o evento: ");
-      int eventoIndex = scanner.nextInt();
-      scanner.nextLine(); // Consome a quebra de linha
-
-      if (eventoIndex >= 0 && eventoIndex < eventos.size()) {
-          Evento evento = eventos.get(eventoIndex);
-
-          System.out.print("Quantidade de ingressos: ");
-          int quantidade = scanner.nextInt();
-
-          System.out.print("Preço do ingresso: R$ ");
-          double preco = scanner.nextDouble();
-
-          evento.criarLote(quantidade, preco);
-          System.out.println("Lote de ingressos criado com sucesso!✅");
-      } else {
-          System.out.println("Evento inválido!😵");
-      }
-  }
-
-  private static void venderIngresso() {
-      if (eventos.isEmpty() || participantes.isEmpty()) {
-          System.out.println("É necessário ter eventos e participantes cadastrados!");
-          return;
-      }
-
-      System.out.println("\nVender Ingresso ");
-      System.out.println("Eventos disponíveis:");
-      for (int i = 0; i < eventos.size(); i++) {
-          System.out.println(i + ". " + eventos.get(i).getNome());
-      }
-
-      System.out.print("Selecione o evento: ");
-      int eventoIndex = scanner.nextInt();
-
-      if (eventoIndex >= 0 && eventoIndex < eventos.size()) {
-          Evento evento = eventos.get(eventoIndex);
-          List<LoteIngresso> lotes = evento.getLotes();
-
-          if (lotes.isEmpty()) {
-              System.out.println("Não há lotes de ingressos disponíveis para este evento!😵");
-              return;
-          }
-
-          System.out.println("\nLotes disponíveis:");
-          for (int i = 0; i < lotes.size(); i++) {
-              LoteIngresso lote = lotes.get(i);
-              System.out.println(i + ". Preço: R$ " + lote.getPreco() + 
-                               " - Disponíveis: " + lote.getQuantidade());
-          }
-
-          System.out.print("Selecione o lote: ");
-          int loteIndex = scanner.nextInt();
-
-          if (loteIndex >= 0 && loteIndex < lotes.size()) {
-              System.out.println("\nParticipantes:");
-              for (int i = 0; i < participantes.size(); i++) {
-                  System.out.println(i + ". " + participantes.get(i).getNome());
-              }
-
-              System.out.print("Selecione o participante: ");
-              int participanteIndex = scanner.nextInt();
-
-              if (participanteIndex >= 0 && participanteIndex < participantes.size()) {
-                  Participante participante = participantes.get(participanteIndex);
-                  LoteIngresso lote = lotes.get(loteIndex);
-
-                  Ingresso ingresso = evento.venderIngresso(participante, lote);
-                  if (ingresso != null) {
-                      System.out.println("Ingresso vendido com sucesso!✅ ID: " + ingresso.getId());
-                  } else {
-                      System.out.println("Não foi possível vender o ingresso!😵");
-                  }
-              } else {
-                  System.out.println("Participante inválido!😵");
-              }
-          } else {
-              System.out.println("Lote inválido!😵");
-          }
-      } else {
-          System.out.println("Evento inválido!😵");
-      }
-  }
-
-  private static void gerarCertificado() {
-      if (eventos.isEmpty() || participantes.isEmpty()) {
-          System.out.println("É necessário ter eventos e participantes cadastrados!😵");
-          return;
-      }
-
-      System.out.println("\n Gerar Certificado ");
-      System.out.println("Eventos disponíveis:");
-      for (int i = 0; i < eventos.size(); i++) {
-          System.out.println(i + ". " + eventos.get(i).getNome());
-      }
-
-      System.out.print("Selecione o evento: ");
-      int eventoIndex = scanner.nextInt();
-
-      if (eventoIndex >= 0 && eventoIndex < eventos.size()) {
-          Evento evento = eventos.get(eventoIndex);
-          List<Participante> participantesEvento = evento.getParticipantes();
-
-          if (participantesEvento.isEmpty()) {
-              System.out.println("Não há participantes neste evento!😵");
-              return;
-          }
-
-          System.out.println("\nParticipantes do evento:");
-          for (int i = 0; i < participantesEvento.size(); i++) {
-              System.out.println(i + ". " + participantesEvento.get(i).getNome());
-          }
-
-          System.out.print("Selecione o participante: ");
-          int participanteIndex = scanner.nextInt();
-
-          if (participanteIndex >= 0 && participanteIndex < participantesEvento.size()) {
-              Participante participante = participantesEvento.get(participanteIndex);
-              Certificado certificado = evento.gerarCertificado(participante);
-              if (certificado != null) {
-                  certificado.emitir();
-                  participante.adicionarCertificado(certificado);
-              } else {
-                  System.out.println("Não foi possível gerar o certificado!😵");
-              }
-          } else {
-              System.out.println("Participante inválido!😵");
-          }
-      } else {
-          System.out.println("Evento inválido!😵");
-      }
-  }
-
-  private static void menuRelatorios() {
-      if (eventos.isEmpty()) {
-          System.out.println("Não há eventos cadastrados!😵");
-          return;
-      }
-
-      System.out.println("\n=== Relatórios ===");
-      System.out.println("1. Relatório de Participantes");
-      System.out.println("2. Relatório de Ingressos Vendidos");
-      System.out.println("3. Relatório de Palestrantes");
-      System.out.print("Escolha uma opção: ");
-
-      int opcao = scanner.nextInt();
-      scanner.nextLine(); // Consome a quebra de linha
-
-      System.out.println("\nEventos disponíveis:");
-      for (int i = 0; i < eventos.size(); i++) {
-          System.out.println(i + ". " + eventos.get(i).getNome());
-      }
-
-      System.out.print("Selecione o evento: ");
-      int eventoIndex = scanner.nextInt();
-
-      if (eventoIndex >= 0 && eventoIndex < eventos.size()) {
-          Evento evento = eventos.get(eventoIndex);
-
-          switch (opcao) {
-              case 1:
-                  Relatorio.gerarRelatorioParticipantes(evento);
-                  break;
-              case 2:
-                  Relatorio.gerarRelatorioIngressosVendidos(evento);
-                  break;
-              case 3:
-                  Relatorio.gerarRelatorioPalestrantes(evento);
-                  break;
-              default:
-                  System.out.println("Opção inválida!😵");
-          }
-      } else {
-          System.out.println("Evento inválido!😵");
-      }
-  }
 }
-// System.out.println("[2] Interface Gráfica (MainGUI)");
-// if (opcao == 2) {
-//     MainGUI.main(args);
-// }
